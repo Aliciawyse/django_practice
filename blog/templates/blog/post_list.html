@@ -1,34 +1,43 @@
-<!DOCTYPE html>
-<html>
+{% extends 'blog/base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
 
-<body>
+{#{% load staticfiles %}#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{##}
+{#<head>#}
+{#    <meta charset="utf-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
+    {#google fonts#}
+{#    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Dosis" rel="stylesheet">#}
+    {#bulma css framework#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">#}
+    {#my css#}
+{#    <link rel="stylesheet" href="{% static 'css/blog.css' %}">#}
+{#</head>#}
+{##}
+{#<body>#}
 
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <p class="navbar-intem title">My first django project: a blog post site</p>
-        </div>
-    </nav>
-
-    <div>
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
-
-    {% for post in posts %}
-        <div>
-            <p>published: {{ post.published_date }}</p>
-            <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text | linebreaksbr }}</p>
-        </div>
-    {% endfor %}
-
+{#    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">#}
+{#        <div class="navbar-brand">#}
+{#            <p class="navbar-item title is-2 page-header"><a href="/">Django Girls Blog</a></p>#}
+{#        </div>#}
+{#    </nav>#}
+{##}
+{#    <div class="container">#}
+{#        <div class=" columns">#}
+{% block content %}
+            {% for post in posts %}
+                <div class="post column">
+                    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                    <p>published: {{ post.published_date }}</p>
+                    <p>{{ post.text | linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}
 
 </body>
 

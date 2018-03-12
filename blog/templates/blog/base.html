@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {#google fonts#}
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Dosis" rel="stylesheet">
+    {#bulma css framework#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    {#my css#}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<body>
+
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <p class="navbar-item title is-2 page-header"><a href="/">Django Girls Blog</a></p>
+        </div>
+    </nav>
+
+    <div class=" content container">
+        <div class="columns">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+h1 a {
+    color: #FCA205;
+    font-family: 'Dosis', sans-serif
+}
+
+nav {
+    padding: .5%;
+}
+
+.navbar-item {
+    color: white;
+    font-family: 'Dosis', sans-serif;
+}
+
+.navbar-item a:visited, .navbar-item a:link  {
+    color: white;
+}
+
+.navbar-item a:hover {
+    color: yellow;
+}
+
+
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    background: pink;
+    margin: 1%;
+    margin-top: 2%;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #000000;
+}
