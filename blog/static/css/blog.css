@@ -20,8 +20,6 @@ nav {
     color: yellow;
 }
 
-
-
 .date {
     color: #828282;
 }
@@ -44,7 +42,7 @@ nav {
 .post {
     background: pink;
     margin: 1%;
-    margin-top: 2%;
+    margin-top: 4%;
 }
 
 .post h1 a, .post h1 a:visited {

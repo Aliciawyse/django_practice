@@ -7,7 +7,14 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
+
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
+
+        {% if user.is_authenticated %}
+        <a class="button is-danger" href="{% url 'post_edit' pk=post.pk %}">Edit me!</a>
+        {% endif %}
+
+
     </div>
 {% endblock %}
